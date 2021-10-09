@@ -1,4 +1,3 @@
-
 let svgHeader = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="150"  xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(0.5,0.5)" text-anchor="middle" font-size="12" font-family="Hack" font-weight="normal">`;
 let svgFooter = `</g></svg>`;
@@ -14,10 +13,7 @@ svgContent += NewLine(0, 80, 0, 115);
 svgContent += NewLine(0, 115, 801, 115);
 svgContent += NewLine(801, 80, 801, 115);
 
-//读取JSON文件信息传输给reg
-var fs = require("fs");
-var data = JSON.parse(fs.readFileSync("2.DR.json"));
-console.log(data.reg);
+let {data}=require('./input');
 
 var color = [
     { "code": "fill-opacity:0.1" },
@@ -140,12 +136,9 @@ function TuSe() {
     }
 }
 
-//运行JS，并数据传输生成svg
-console.log("准备写入文件");
-fs.writeFile('test.svg', svg, function (err) {
-    if (err) {
-        return console.error(err);
-    }
-    console.log("<svg>数据写入成功！");
-});
+module.exports={
+    svg
+};
+var output=require('./output');
+
 

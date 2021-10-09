@@ -1,1 +1,1 @@
-画svg图
+input读取JSON文件，main根据input传输的数据画图，output输出svg图。

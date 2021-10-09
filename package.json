@@ -1,0 +1,22 @@
+{
+  "name": "task1_svg",
+  "version": "1.0.0",
+  "description": "绘制SVG图",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zcy0221/genreg.git"
+  },
+  "keywords": [
+    "SVG"
+  ],
+  "author": "zcy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zcy0221/genreg/issues"
+  },
+  "homepage": "https://github.com/zcy0221/genreg#readme"
+}
