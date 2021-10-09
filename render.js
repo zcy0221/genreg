@@ -1,4 +1,4 @@
-//渲染
+//渲染绘制
 let { data } = require('./input');
 let svgContent = ``;
 
@@ -126,10 +126,10 @@ function TuSe() {
         }
     }
     console.log("涂色完成!");
-    module.exports = {svgContent};
+    module.exports = { svgContent };
 }
 
-module.exports={
+module.exports = {
     KuangJia1,
     KuangJia2,
     BiaoHao,

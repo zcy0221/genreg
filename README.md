@@ -1,1 +1,1 @@
-运行main.js文件，首先input.js读取相应的JSON文件数据，再传递给render.js，绘制出相应寄存器，最后由output输出svg图。
+运行main.js文件，首先input.js读取相应的JSON文件数据，再传递给render.js，绘制出相应寄存器，最后由output.js输出svg图。
