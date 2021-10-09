@@ -1,7 +1,7 @@
-//读取JSON文件信息传输给reg
+//读取JSON文件信息
 var fs = require("fs");
-var data = JSON.parse(fs.readFileSync("5.ISR.json"));
+var data = JSON.parse(fs.readFileSync("./N100/I2C/1.CR.json"));
 console.log(data.reg);
-module.exports={
+module.exports = {
     data
 };

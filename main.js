@@ -13,7 +13,7 @@ svgContent += NewLine(0, 80, 0, 115);
 svgContent += NewLine(0, 115, 801, 115);
 svgContent += NewLine(801, 80, 801, 115);
 
-let {data}=require('./input');
+let { data } = require('./input');
 
 var color = [
     { "code": "fill-opacity:0.1" },
@@ -136,9 +136,9 @@ function TuSe() {
     }
 }
 
-module.exports={
+module.exports = {
     svg
 };
-var output=require('./output');
+var output = require('./output');
 
 
