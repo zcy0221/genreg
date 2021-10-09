@@ -1,7 +1,5 @@
 //渲染绘制
-let { data } = require('./input');
 let svgContent = ``;
-
 svgContent += NewLine(0, 20, 801, 20);
 svgContent += NewLine(0, 20, 0, 55);
 svgContent += NewLine(0, 55, 801, 55);
@@ -27,7 +25,7 @@ function NewLine(x1, y1, x2, y2) {
     return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="black" stroke-width="1"/>`
 }
 
-function KuangJia1() {
+function KuangJia1(data) {
     let x1 = 801;
     let sum = 0;
     for (i = 0; i < data.reg.length; i++) {
@@ -52,7 +50,7 @@ function KuangJia1() {
     }
 }
 
-function KuangJia2() {
+function KuangJia2(data) {
     let x1 = 801;
     let sum = 0;
     for (i = 0; i < data.reg.length; i++) {
@@ -80,7 +78,7 @@ function KuangJia2() {
     }
 }
 
-function BiaoHao() {
+function BiaoHao(data) {
     let sum = 0;
     for (i = 0; i < data.reg.length; i++) {
         sum += data.reg[i].bits;
@@ -111,7 +109,7 @@ function BiaoHao() {
     console.log("标号完成!");
 }
 
-function TuSe() {
+function TuSe(data) {
     let sum = 0;
     for (i = 0; i < data.reg.length; i++) {
         t = data.reg[i].type;
