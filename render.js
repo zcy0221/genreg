@@ -25,7 +25,7 @@ function NewLine(x1, y1, x2, y2) {
     return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="black" stroke-width="1"/>`
 }
 
-function KuangJia1(data) {
+function Frame1(data) {
     let x1 = 801;
     let sum = 0;
     for (i = 0; i < data.reg.length; i++) {
@@ -50,7 +50,7 @@ function KuangJia1(data) {
     }
 }
 
-function KuangJia2(data) {
+function Frame2(data) {
     let x1 = 801;
     let sum = 0;
     for (i = 0; i < data.reg.length; i++) {
@@ -78,7 +78,7 @@ function KuangJia2(data) {
     }
 }
 
-function BiaoHao(data) {
+function Postil(data) {
     let sum = 0;
     for (i = 0; i < data.reg.length; i++) {
         sum += data.reg[i].bits;
@@ -109,7 +109,7 @@ function BiaoHao(data) {
     console.log("标号完成!");
 }
 
-function TuSe(data) {
+function Painting(data) {
     let sum = 0;
     for (i = 0; i < data.reg.length; i++) {
         t = data.reg[i].type;
@@ -128,8 +128,8 @@ function TuSe(data) {
 }
 
 module.exports = {
-    KuangJia1,
-    KuangJia2,
-    BiaoHao,
-    TuSe,
+    Frame1,
+    Frame2,
+    Postil,
+    Painting
 };
