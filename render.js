@@ -1,15 +1,5 @@
 //渲染绘制
 let svgContent = ``;
-svgContent += NewLine(0, 20, 801, 20);
-svgContent += NewLine(0, 20, 0, 55);
-svgContent += NewLine(0, 55, 801, 55);
-svgContent += NewLine(801, 20, 801, 55);
-
-svgContent += NewLine(0, 80, 801, 80);
-svgContent += NewLine(0, 80, 0, 115);
-svgContent += NewLine(0, 115, 801, 115);
-svgContent += NewLine(801, 80, 801, 115);
-
 var color = [
     { "code": "fill-opacity:0.1" },
     { "code": "fill-opacity:0.1" },
@@ -21,8 +11,8 @@ var color = [
     { "code": "fill-opacity:0.1;fill:hsl(215,100%,50%)" }
 ];
 
-function NewLine(x1, y1, x2, y2) {
-    return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="black" stroke-width="1"/>`
+function SFrame(x1, y1, x2, y2) {
+    svgContent+= `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="black" stroke-width="1"/>`;
 }
 
 function Frame1(data) {
@@ -106,7 +96,6 @@ function Postil(data) {
             }
         }
     }
-    console.log("标号完成!");
 }
 
 function Painting(data) {
@@ -123,11 +112,12 @@ function Painting(data) {
             svgContent += `<rect x="${801 - m * 50}" y="20" width="${n * 50}" height="35" style="${color[t].code}" />`;
         }
     }
-    console.log("涂色完成!");
     module.exports = { svgContent };
+    svgContent = ``;
 }
 
 module.exports = {
+    SFrame,
     Frame1,
     Frame2,
     Postil,

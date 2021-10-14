@@ -5,8 +5,21 @@ function output(m, n) {
         if (err) {
             return console.error(err);
         }
-        console.log("成功生成SVG图！");
     });
+}
+
+//判断路径，可递归创建目录
+function mkdirsSync(dirname) {
+    var fs = require("fs");
+    var path = require("path");
+    if (fs.existsSync(dirname)) {
+        return true;
+    } else {
+        if (mkdirsSync(path.dirname(dirname))) {
+            fs.mkdirSync(dirname);
+            return true;
+        }
+    }
 }
 
 //终端运行格式
@@ -14,7 +27,7 @@ function getPath(String) {
     var process = require("process");
     let args = process.argv.slice(2);//去除前两个参数，node xxx.js
     if (args.length === 0) {
-        return "格式：node xxx.js -i xxx.json -o xxx.svg";
+        return "格式错误";
     }
     if (args.length > 0) {
         for (let i = 0; i < args.length; i++) {
@@ -24,7 +37,8 @@ function getPath(String) {
         }
     }
 }
-module.exports = { 
-    output, 
-    getPath 
+module.exports = {
+    output,
+    mkdirsSync,
+    getPath
 };
