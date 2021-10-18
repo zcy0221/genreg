@@ -40,8 +40,4 @@ function getPath(String) {
         }
     }
 }
-module.exports = {
-    output,
-    mkdirsSync,
-    getPath
-};
+module.exports = { output, getPath };

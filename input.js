@@ -29,7 +29,6 @@ function fdata(spath) {
         return jdatas;
     }
 }
-
 //获取遍历JSON文件路径和文件名
 function finder(spath) {
     let join = require("path").join;
