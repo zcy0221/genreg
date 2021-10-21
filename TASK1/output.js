@@ -1,15 +1,19 @@
 var path = require("path");
 var fs = require("fs");
-function output(cPath, head, files) {
-    //console.log(head);
-    mkdirsSync(cPath);
-    for (i = 0; i < head.length && i < files.length; i++) {
-        m=`${cPath}/${files[i]}.h`.toString();;
-        n= head[i].toString();
-        fs.writeFileSync(m, n);
+function output(cPath, svg, fName) {
+    var parentDir = path.dirname(cPath);//文件目录
+    var extension = path.extname(cPath);//后缀
+    var file = path.basename(cPath, extension);//文件名
+    if (extension) {
+        mkdirsSync(parentDir);
+        fs.writeFileSync(`${parentDir}/${file}${extension}`, svg[0]);
+    } else {
+        mkdirsSync(cPath);
+        for (i = 0; i < svg.length && i < fName.length; i++) {
+            fs.writeFileSync(`${cPath}/${fName[i]}.svg`, svg[i]);
+        }
     }
 }
-
 //判断路径，可递归创建目录
 function mkdirsSync(dirname) {
     if (fs.existsSync(dirname)) {
