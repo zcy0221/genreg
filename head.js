@@ -14,7 +14,8 @@ function data(dir) {
     });
     module.exports = { nFile1 };
 
-    let dir1=transfer(nFile1,dir)
+    let dir1=transfer(nFile1,dir);//处理一下路径方便下面判断
+
     dir1.forEach(function (fileName) {
         var fDir = path.dirname(fileName);//fileName路径名,fDir父目录名，nDir文件所在文件夹名
         var nDir = path.basename(fDir);
@@ -46,8 +47,13 @@ function data(dir) {
                 bitPosition = sum - bitMask;
                 if (jInfo[i][m].name != "RES") {
                     head +=`//////////@brief ${RegisterName}_${bitName} Register Defintion\n`;
-                    head += `#define ${IPName}_${RegisterName}_${bitName}_Pos\t\t\t(${bitPosition}U)\n`;
-                    head += `#define ${IPName}_${RegisterName}_${bitName}\t\t\t\t(${bitMask}U << ${IPName}_${RegisterName}_${bitName}_Pos)\n\n`;
+                    var head1 = `#define ${IPName}_${RegisterName}_${bitName}_Pos`;
+                        head1 = head1.padEnd(50," ");
+                    var head2 =`(${bitPosition}U)\n`;
+                    var head3 = `#define ${IPName}_${RegisterName}_${bitName}`;
+                        head3 = head3.padEnd(50," ");
+                    var head4 =`(${bitMask}U << ${IPName}_${RegisterName}_${bitName}_Pos)\n\n`;
+                    head +=head1+head2+head3+head4;
                 }
             }
         }

@@ -10,7 +10,9 @@ function fdata(spath) {
     else if (stat.isDirectory()) {
         let files = finder(spath);
         return files;
-    } 
+    } else{
+        return spath;
+    }
 }
 //获取遍历JSON文件路径和文件名
 function finder(spath) {

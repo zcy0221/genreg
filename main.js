@@ -8,5 +8,4 @@ let head=data(dir);
 let {nFile1}=require('./head')
 var set = new Set(nFile1);
 var files = [...set];
-//console.log(files)
 output(getPath("-o"), head, files);
