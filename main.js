@@ -1,11 +1,9 @@
 let { fdata } = require('./input');
-let {data}=require('./head');
+let { render } = require('./render');
 let { getPath, output } = require('./output');
 
 let filePath = getPath("-i");
-let dir = fdata(filePath);
-let head=data(dir);
-let {nFile1}=require('./head')
-var set = new Set(nFile1);
-var files = [...set];
-output(getPath("-o"), head, files);
+let data = fdata(filePath);
+let { fName } = require('./input');
+let svg = render(data);
+output(getPath("-o"), svg, fName);
